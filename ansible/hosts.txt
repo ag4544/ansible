@@ -1,0 +1,5 @@
+[first]
+135.181.27.29
+[first:vars]
+ansible_user=root
+ansible_ssh_private_key=/home/ag4544/.ssh/tf_rsa

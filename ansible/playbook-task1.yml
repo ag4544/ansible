@@ -1,0 +1,5 @@
+- hosts:
+    - all
+  tasks:
+    - action: apt pkg=nginx state=latest
+    - action: service name=nginx state=started enabled=yes
