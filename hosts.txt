@@ -1,0 +1,5 @@
+[first]
+135.181.33.227
+[first:vars]
+ansible_user=root
+ansible_ssh_private_key_file=./ansible_tasks

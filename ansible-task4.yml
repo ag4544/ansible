@@ -1,0 +1,36 @@
+---
+- name: Install nginx and copy config files
+  hosts: all
+
+
+  vars:
+    listen_port: 8090
+    rootdir: /etc/
+    ports: [80, 81, 82, 83, 84, 1080, 8080, 10800]
+    testvars: [alpha, beta, gamma, delta]
+    source_site_template: ./default.j2
+    source_config: ./nginx.conf
+    destinationsite1: /etc/nginx/sites-available/default1
+    destination_config: /etc/nginx/nginx.conf
+
+
+  tasks:
+  - name: Install nginx
+    apt: name=nginx state=latest
+
+  - name: Copy  nginx default config
+    copy: src={{ source_config }} dest={{ destination_config }} mode=0644
+    notify: nginx_reload
+
+
+  - name: Generate nginx config file for site 1 from template
+    template: src={{ source_site_template }} dest={{ destinationsite1 }} mode=0644
+    notify: nginx_reload
+
+  - name: Create symlink for site1
+    file: src={{ destinationsite1 }} dest=/etc/nginx/sites-enabled/default1 state=link
+    notify: nginx_reload
+
+  handlers:
+  - name: nginx_reload
+    shell: /etc/init.d/nginx reload
