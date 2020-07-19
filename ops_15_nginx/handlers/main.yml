@@ -1,0 +1,4 @@
+---
+# handlers file for ops_15_nginx
+- name: nginx_reload
+  shell: /etc/init.d/nginx reload

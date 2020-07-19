@@ -1,0 +1,8 @@
+---
+# defaults file for ops_15_nginx
+listen_port: 8090
+rootdir: /etc/
+ports: [80, 81, 82, 83, 84, 1080, 8080, 10800]
+testvars: [alpha, beta, gamma, delta]
+destinationsite1: /etc/nginx/sites-available/default1
+destination_config: /etc/nginx/nginx.conf

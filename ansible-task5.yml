@@ -1,0 +1,7 @@
+---
+- name: Install nginx and copy config files
+  hosts: all
+
+
+  roles:
+    - ops_15_nginx
