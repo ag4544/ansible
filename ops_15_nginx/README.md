@@ -1,31 +1,40 @@
-Role Name
+ops_15_nginx
 =========
 
-A brief description of the role goes here.
+This role installs nginx to vps at hosts.txt and makes basic configuration
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+You need any debian-based operating system
 
 Role Variables
 --------------
-
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+listen_port: port to listen by nginx
+rootdir: directory, that would be shown, when you go to :listen_port
+ports: list of test variables
+testvars: list of another test variables
+destinationsite1: location of sites-available
+destination_config: location of nginx.conf
 
 Dependencies
 ------------
-
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+No Dependencies
 
 Example Playbook
 ----------------
 
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+```
+- name: Install nginx and copy config files
+  hosts: all
+
+  roles:
+    - ops_15_nginx
+
+```
+launch: ansible-playbook -i hosts.txt ansible-task5.yml
 
 License
 -------
@@ -34,5 +43,4 @@ BSD
 
 Author Information
 ------------------
-
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+ag4544@yandex.ru
