@@ -10,12 +10,17 @@ You need any debian-based operating system
 
 Role Variables
 --------------
-...listen_port: port to listen by nginx
-...rootdir: directory, that would be shown, when you go to :listen_port
-...ports: list of test variables
-...testvars: list of another test variables
-...destinationsite1: location of sites-available
-...destination_config: location of nginx.conf
+listen_port: port to listen by nginx
+
+rootdir: directory, that would be shown, when you go to :listen_port
+
+ports: list of test variables
+
+testvars: list of another test variables
+
+destinationsite1: location of sites-available
+
+destination_config: location of nginx.conf
 
 Dependencies
 ------------
