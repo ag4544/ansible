@@ -1,0 +1,22 @@
+---
+# tasks file for ops_16_letsencrypt
+
+  - name: install letsencrypt
+    apt: name=letsencrypt state=latest
+
+  - name: Create letsencrypt certificate
+    shell: letsencrypt certonly --webroot -w /var/www/html -m {{ my_email }} --agree-tos -d {{ inventory_hostname }}
+
+  - name: Remove default nginx config
+    file: name={{ destinationsite }} state=absent
+
+
+  - name: Generate nginx config file from template
+    template: src=default.j2 dest={{ destinationsite }} mode=0644
+    notify: nginx_reload
+
+  - name: Automatic renew of the certificate
+    cron:
+      name: cert_renew
+      special_time: monthly
+      job: letsencrypt --renew-by-default certonly --webroot -w /var/www/html -m {{ my_email }} --agree-tos -d {{ inventory_hostname }} && /etc/init.d/nginx reload

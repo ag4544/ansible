@@ -1,0 +1,4 @@
+---
+# handlers file for ops_16_letsencrypt
+- name: nginx_reload
+  shell: /etc/init.d/nginx reload

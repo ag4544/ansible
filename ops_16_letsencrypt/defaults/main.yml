@@ -1,0 +1,4 @@
+---
+# defaults file for ops_16_letsencrypt
+destinationsite: /etc/nginx/sites-available/default
+my_email: ag4544@yandex.ru
