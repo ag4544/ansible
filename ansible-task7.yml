@@ -1,0 +1,6 @@
+---
+- name: Install nginx depending on OS
+  hosts: all
+
+  roles:
+    - install-nginx

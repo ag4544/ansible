@@ -1,0 +1,12 @@
+---
+# tasks file for install-nginx
+  - name: Install nginx on debian
+    apt: name=nginx state=latest
+    when: ansible_os_family == "Debian"
+
+  - name: Install nginx on centos
+    yum: name=nginx state=latest
+    when: ansible_os_family == "RedHat"
+
+  - name: Enable nginx
+    service: name=nginx state=started enabled=yes
