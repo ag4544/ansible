@@ -1,0 +1,25 @@
+---
+- name: include platform-specific tasks
+  include_tasks: "{{ platform }}"
+  with_first_found:
+    - "system/{{ ansible_os_family }}.yml"
+  loop_control:
+    loop_var: platform
+
+- name: configure zabbix-agent
+  template:
+    src: zabbix_agentd.conf.j2
+    dest: /etc/zabbix/{{ zabbix_agent_conf }}
+    owner: root
+    group: root
+    mode: 0644
+  notify:
+    - restart zabbix-agent
+  become: True
+
+- name: make sure the zabbix-agent service is running
+  service:
+    name: "{{ zabbix_agent_service }}"
+    state: started
+    enabled: True
+  become: True
