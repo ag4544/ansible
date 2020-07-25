@@ -1,0 +1,6 @@
+---
+- name: Install nginx and make basic configuration
+  hosts: all
+
+  roles:
+    - nginx-config

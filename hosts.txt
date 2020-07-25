@@ -1,0 +1,6 @@
+[debian]
+135.181.38.235
+
+[all:vars]
+ansible_user=root
+ansible_ssh_private_key_file=./ansible_tasks

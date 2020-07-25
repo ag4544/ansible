@@ -1,0 +1,4 @@
+---
+# list of dependencies
+  dependencies:
+  - { role: nginx-install }

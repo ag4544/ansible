@@ -1,0 +1,5 @@
+---
+# tasks file for nginx-config
+  - name: Generate nginx config file for site 1 from template
+    template: src=default.j2 dest={{ destinationsite }} mode=0644
+    notify: nginx_reload

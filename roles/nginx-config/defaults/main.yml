@@ -1,0 +1,9 @@
+---
+# defaults file for nginx-config
+sendfile: "on"
+tcp_nopush: "on"
+tcp_nodelay: "on"
+keepalive_timeout: 15
+listen_port: 8090
+rootdir: /etc/
+destinationsite: /etc/nginx/sites-available/default

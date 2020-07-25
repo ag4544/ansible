@@ -1,0 +1,4 @@
+---
+# handlers file for nginx-config
+  - name: nginx_reload
+    shell: /etc/init.d/nginx reload

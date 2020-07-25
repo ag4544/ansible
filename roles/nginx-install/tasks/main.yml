@@ -1,0 +1,7 @@
+---
+# tasks file for nginx-install
+  - name: Install nginx on debian
+    apt: name=nginx state=latest
+
+  - name: Enable nginx
+    service: name=nginx state=started enabled=yes
