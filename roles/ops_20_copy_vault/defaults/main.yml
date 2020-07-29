@@ -1,0 +1,6 @@
+---
+# defaults file for ops_20_copy_vault
+destination_ssl_cert: /etc/ssl/fullchain.pem
+destination_ssl_privkey: /etc/ssl/privkey.pem
+destination_ssh_privkey: ~/.ssh/ops20_rsa
+destination_nginx_config: /etc/nginx/sites-available/default

@@ -1,0 +1,4 @@
+---
+# handlers file for ops_20_copy_vault
+- name: nginx_reload
+  shell: /etc/init.d/nginx reload

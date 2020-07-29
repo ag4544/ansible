@@ -1,0 +1,6 @@
+---
+- name: Install nginx and copy config files
+  hosts: all
+
+  roles:
+    - ops_20_copy_vault

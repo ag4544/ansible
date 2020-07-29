@@ -1,0 +1,23 @@
+server {
+	listen 80 default_server;
+
+	root /var/www/html;
+	index index.html index.htm index.nginx-debian.html;
+
+	server_name _;
+
+	location / {
+		try_files $uri $uri/ =404;
+	}
+}
+
+server {
+  listen 443 ssl http2;
+  server_name _;
+
+  ssl_certificate {{ destination_ssl_cert }};
+  ssl_certificate_key {{ destination_ssl_privkey }};
+
+  root /var/www/html;
+  index index.html index.htm index.nginx-debian.html;
+}
