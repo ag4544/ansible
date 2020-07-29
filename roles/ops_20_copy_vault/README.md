@@ -1,7 +1,7 @@
 ops_20_copy_vault
 =========
 
-This role copies some encrypted file to
+This role copies some encrypted file to VPS
 
 Requirements
 ------------
