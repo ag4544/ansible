@@ -1,0 +1,28 @@
+---
+# tasks file for ops_20_copy_vault
+ - name: Generate default nginx config from template
+   template: src=default.j2  dest={{ destination_nginx_config }}
+   notify: nginx_reload
+
+ - name: Copy encrypted ssl-cert
+   copy:
+    src: fullchain.pem
+    dest: "{{ destination_ssl_cert }}"
+    decrypt: yes
+    mode: '0600'
+   notify: nginx_reload
+
+ - name: Copy encrypted ssl-privkey
+   copy:
+    src: privkey.pem
+    dest: "{{ destination_ssl_privkey }}"
+    decrypt: yes
+    mode: '0600'
+   notify: nginx_reload
+
+ - name: Copy encrypted ssh private key
+   copy:
+    src: ops20_rsa
+    dest: "{{ destination_ssh_privkey }}"
+    decrypt: yes
+    mode: '0600'

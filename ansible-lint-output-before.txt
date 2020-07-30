@@ -1,0 +1,16 @@
+305 Use shell only when shell functionality is required
+/home/ag4544/ansible_tasks/task10/roles/ops_20_copy_vault/handlers/main.yml:3
+Task/Handler: nginx_reload
+
+701 Role info should contain platforms
+/home/ag4544/ansible_tasks/task10/roles/ops_20_copy_vault/meta/main.yml:2
+{'meta/main.yml': {'galaxy_info': {'author': 'ag4544', 'description': 'Role for task OPS20', 'company': 'rebrain', 'license': 'BSD', 'min_ansible_version': 2.7, 'galaxy_tags': [], '__line__': 3, '__file__': '/home/ag4544/ansible_tasks/task10/roles/ops_20_copy_vault/meta/main.yml'}, 'dependencies': [{'role': 'ops_20_nginx_install', '__line__': 10, '__file__': '/home/ag4544/ansible_tasks/task10/roles/ops_20_copy_vault/meta/main.yml'}], '__line__': 2, '__file__': '/home/ag4544/ansible_tasks/task10/roles/ops_20_copy_vault/meta/main.yml', 'skipped_rules': []}}
+
+701 Role info should contain platforms
+/home/ag4544/ansible_tasks/task10/roles/ops_20_nginx_install/meta/main.yml:2
+{'meta/main.yml': {'galaxy_info': {'author': 'ag4544', 'description': 'Role for task OPS20', 'company': 'rebrain', 'license': 'BSD', 'min_ansible_version': 2.7, 'galaxy_tags': [], '__line__': 3, '__file__': '/home/ag4544/ansible_tasks/task10/roles/ops_20_nginx_install/meta/main.yml'}, 'dependencies': [], '__line__': 2, '__file__': '/home/ag4544/ansible_tasks/task10/roles/ops_20_nginx_install/meta/main.yml', 'skipped_rules': []}}
+
+403 Package installs should not use latest
+/home/ag4544/ansible_tasks/task10/roles/ops_20_nginx_install/tasks/main.yml:3
+Task/Handler: Install nginx on debian
+

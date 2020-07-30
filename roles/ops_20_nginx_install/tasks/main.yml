@@ -1,0 +1,7 @@
+---
+# tasks file for ops_20_nginx
+  - name: Install nginx on debian
+    apt: name=nginx state=present
+
+  - name: Enable nginx
+    service: name=nginx state=started enabled=yes

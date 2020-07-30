@@ -1,0 +1,4 @@
+---
+# handlers file for ops_20_copy_vault
+- name: nginx_reload
+  service: name=nginx state=reloaded
