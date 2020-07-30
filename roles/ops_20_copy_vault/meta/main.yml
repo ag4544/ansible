@@ -1,4 +1,10 @@
 ---
-# list of dependencies
-  dependencies:
-  - { role: ops_20_nginx_install }
+galaxy_info:
+  author: ag4544
+  description: Role for task OPS20
+  company: rebrain
+  license: BSD
+  min_ansible_version: 2.7
+  galaxy_tags: []
+dependencies:
+  - role: ops_20_nginx_install
