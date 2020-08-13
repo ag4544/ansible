@@ -1,0 +1,4 @@
+---
+# defaults file for server_application
+destination_site: /etc/nginx/sites-available/default
+destination_test_html: /var/www/html/test.html

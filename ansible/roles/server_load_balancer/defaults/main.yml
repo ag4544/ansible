@@ -1,0 +1,4 @@
+---
+# defaults file for server_load_balancer
+destination_nginx_config: /etc/nginx/nginx.conf
+backend_fqdn: ag4544-app.devops.rebrain.srwx.net

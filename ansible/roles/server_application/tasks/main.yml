@@ -1,0 +1,21 @@
+---
+# tasks file for server_application
+  - name: Install nginx on debian
+    apt: name=nginx state=present
+
+  - name: Enable nginx
+    service: name=nginx state=started enabled=yes
+
+  - name: Copy default site
+    copy:
+     src: default
+     dest: "{{ destination_site }}"
+     mode: '0777'
+    notify: nginx_reload
+
+  - name: Copy test page
+    copy:
+     src: test.html
+     dest: "{{ destination_test_html }}"
+     mode: '0777'
+    notify: nginx_reload

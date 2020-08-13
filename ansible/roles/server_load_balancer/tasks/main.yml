@@ -1,0 +1,11 @@
+---
+# tasks file for server_load_balancer
+  - name: Install nginx on debian
+    apt: name=nginx state=present
+
+  - name: Enable nginx
+    service: name=nginx state=started enabled=yes
+
+  - name: Generate default nginx config from template
+    template: src=nginx.conf.j2  dest={{ destination_nginx_config }}
+    notify: nginx_reload

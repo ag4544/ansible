@@ -1,0 +1,12 @@
+---
+- name: Configure load balancer
+  hosts: lb
+
+  roles:
+    - server_load_balancer
+
+- name: Configure application server
+  hosts: app
+
+  roles:
+    - server_application
