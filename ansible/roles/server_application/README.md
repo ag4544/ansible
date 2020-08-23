@@ -25,17 +25,12 @@ Example Playbook
 
 ```
 ---
-- name: Configure load balancer
-  hosts: lb
-
-  roles:
-    - server_load_balancer
-
-- name: Configure application server
-  hosts: app
+- name: Configure backend server
+  hosts: backend
 
   roles:
     - server_application
+
 ```
 
 License
